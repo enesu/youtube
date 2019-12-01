@@ -1,0 +1,24 @@
+#include <Servo.h>               
+int suSensoru = A0;                
+int sensorEsik = 100;              
+int servoMotor = 9;                 
+int deger;          
+int hareket;                      
+Servo motor;                      
+
+void setup() {
+  motor.attach(servoMotor);  
+
+      
+}
+void loop() {
+  deger = analogRead(suSensoru);    
+  if(deger > sensorEsik){ 
+                              
+   motor.write(180);
+  }
+  else{ 
+          
+    motor.write(60);
+  }
+}
