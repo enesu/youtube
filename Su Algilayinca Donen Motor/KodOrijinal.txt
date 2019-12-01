@@ -1,0 +1,24 @@
+#include <Servo.h>               
+int sensorPin = A0;                
+int esikDegeri = 100;              
+int servoPin = 9;                 
+int veri;          
+int hareket;                      
+Servo motor;                      
+
+void setup() {
+  motor.attach(servoPin);  
+
+      
+}
+void loop() {
+  veri = analogRead(sensorPin);    
+  if(veri > esikDegeri){ 
+                              
+   motor.write(180);
+  }
+  else{ 
+          
+    motor.write(60);
+  }
+}
